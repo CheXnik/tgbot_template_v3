@@ -17,10 +17,11 @@ services:
       options:
         max-size: "200k"
         max-file: "10"
+        mode: non-blocking
 
 #  redis:
-#    image: redis:6.2-alpine
-#    container_name: redis_${POSTFIX}
+#    image: redis:8.0-alpine
+#    container_name: redis_${NAME}
 #    restart: unless-stopped
 #    command: redis-server --port $REDIS_PORT --save 20 1 --loglevel warning --requirepass $REDIS_PASSWORD
 #    env_file:
@@ -35,9 +36,10 @@ services:
 #      options:
 #        max-size: "100k"
 #        max-file: "10"
+#        mode: non-blocking
 
 #  pg_database:
-#    image: postgres:13-alpine
+#    image: postgres:17.5-alpine
 #    container_name: "postgres_${NAME}"
 #    expose:
 #      - 5432
@@ -58,6 +60,7 @@ services:
 #      options:
 #        max-size: "200k"
 #        max-file: "10"
+#        mode: non-blocking
 
 #  pgadmin:
 #    image: dpage/pgadmin4
@@ -78,6 +81,7 @@ services:
 #      options:
 #        max-size: "200k"
 #        max-file: "10"
+#        mode: non-blocking
 
 #volumes:
 #  cache:
